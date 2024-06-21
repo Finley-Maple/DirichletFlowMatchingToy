@@ -28,7 +28,7 @@ class MNISTDataset(Dataset):
             image = jax.lax.clamp(0, image, num_cats - 1)
             return image
 
-        self.mnist = MNIST(root="./data", train=train, download=True, transform=transform)
+        self.mnist = MNIST(root="./data", train=train, download=False, transform=transform)
 
         # Limit to certain digits if specified
         # Will increase preprocessing time MNIST's transform will be applied under the hood
